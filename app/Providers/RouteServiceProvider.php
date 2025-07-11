@@ -29,6 +29,8 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->routes(function () {
+            Route::middleware('web')
+                ->group(base_path('routes/web.php'));
             Route::middleware('user')
                 ->prefix('user')
                 ->group(base_path('routes/userRoutes.php'));

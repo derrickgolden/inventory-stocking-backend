@@ -198,6 +198,10 @@ class Kernel extends HttpKernel
         "quote"=>[
             ThrottleRequests::class,
             SubstituteBindings::class,
+        ],
+        "web"=>[
+            ThrottleRequests::class,
+            SubstituteBindings::class,
         ]
 
     ];

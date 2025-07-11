@@ -15,6 +15,9 @@ use App\Http\Controllers\RefreshTokenController;
 |
 */
 
+Route::get('/', function () {
+    return 'hello';
+});
 Route::post('/login', [UsersController::class, 'login']);
 Route::post('/register', [UsersController::class, 'register']);
 //refresh token routes
