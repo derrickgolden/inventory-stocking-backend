@@ -73,6 +73,10 @@ class UsersController extends Controller
 
             return response()->json(['error' => 'Invalid username or password'], 401);
         } catch (Exception $error) {
+            Log::error('Create User Error: ' . $error->getMessage(), [
+                'exception' => $error,
+                'trace' => $error->getTraceAsString()
+            ]);
             return response()->json(['error' => 'An error occurred during create user. Please try again later.'], 500);
         }
     }

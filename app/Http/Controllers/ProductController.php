@@ -210,8 +210,6 @@ class ProductController extends Controller
                 return response()->json(['error' => 'An error occurred during getting product.Please try again later.'], 500);
             }
         } elseif ($request->query('status')) {
-            Log::info("('query') === 'status'");
-
             try {
                 $pagination = getPagination($request->query());
 

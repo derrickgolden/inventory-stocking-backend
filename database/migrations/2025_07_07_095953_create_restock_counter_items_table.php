@@ -20,8 +20,8 @@ return new class extends Migration
             $table->decimal('sale_price', 10, 2);
             $table->decimal('sub_total', 10, 2);
             
-            $table->foreign('restock_counter_id')->references('id')->on('restock_counter')->onDelete('cascade');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('restock_counter_id')->references('id')->on('restock_counters')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');
         });
 
     }
