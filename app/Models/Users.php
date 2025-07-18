@@ -62,4 +62,10 @@ class Users extends Model
     {
         return $this->hasMany(Quote::class, 'quoteOwnerId');
     }
+
+    public function counter()
+    {
+        return $this->hasOne(Counter::class, 'staffId', 'id');
+    }
+
 }

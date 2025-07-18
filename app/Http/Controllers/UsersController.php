@@ -198,7 +198,7 @@ class UsersController extends Controller
             }
 
             $singleUser = Users::where('id', $request['id'])
-                ->with('saleInvoice')
+                ->with('saleInvoice', 'counter')
                 ->first();
 
             if (!$singleUser) {

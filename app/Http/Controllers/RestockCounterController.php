@@ -187,6 +187,8 @@ class RestockCounterController extends Controller
             ->orderByDesc('id')
             ->get();
 
+        $totalCounterProductStock = CounterProductStock::where('counter_id', $counterId)->sum('current_quantity');
+
         $counted = $restockCounters->count('id');
         $totalAmount = $restockCounters->sum('total_amount');
         $totalQuantity = $restockCounters->sum('total_quantity');
@@ -216,6 +218,7 @@ class RestockCounterController extends Controller
             '_sum' => [
                 'totalAmount' => $totalAmount,
                 'totalQuantity' => $totalQuantity,
+                'totalAvlStock' => $totalCounterProductStock,
             ],
         ];
 
